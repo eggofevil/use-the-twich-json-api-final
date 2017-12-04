@@ -51,7 +51,11 @@ function streamMonitor() {
   streamInfoReq.responseType = 'json';
   streamInfoReq.addEventListener('load', function (e) {
     if (streamInfoReq.status === 200) {
-      setUserInfo(streamInfoReq.response.data);
+      if (typeof(streamInfoReq) === string) {
+        setUserInfo(JSON.parse(streamInfoReq.response.data));
+      } else {
+        setUserInfo(streamInfoReq.response.data);
+      }
     } else {
       console.log(e);
     }
@@ -131,7 +135,11 @@ function getUserList() {
   userInfoReq.responseType = 'json';
   userInfoReq.addEventListener('load', function (e) {
     if (userInfoReq.status === 200) {
-      userList = userInfoReq.response.data;
+      if (typeof (userInfoReq.response) === 'string') {
+        userList = JSON.parse(userInfoReq.response.data);
+      } else {
+        userList = userInfoReq.response.data;
+      }
       createUserDivs();
     } else {
       console.log(e);
