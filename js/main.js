@@ -1,6 +1,5 @@
-var userLoginList = ['freecodecamp', 'y0nd', 'alohadancetv', 'silvername'],
+var userLoginList = ['freecodecamp', 'y0nd', 'alohadancetv', 'silvername', 'cartmanzbs'],
   userList,
-  response,
   indicators;
 
 //set user info
@@ -14,7 +13,6 @@ function setUserInfo(streamsArray) {
       startTime;
     for (item in streamsArray) {
       if (streamsArray.hasOwnProperty(item)) {
-        
         if (id === streamsArray[item].user_id) {
           if (currentValue.classList.toString().indexOf('online') === -1) {
             currentValue.className += ' online';
@@ -52,7 +50,7 @@ function streamMonitor() {
   streamInfoReq.responseType = 'json';
   streamInfoReq.addEventListener('load', function (e) {
     if (streamInfoReq.status === 200) {
-      if (typeof(streamInfoReq) === 'string') {
+      if (typeof(streamInfoReq.response) === 'string') {
         setUserInfo(JSON.parse(streamInfoReq.response).data);
       } else {
         setUserInfo(streamInfoReq.response.data);
@@ -120,7 +118,7 @@ function createUserDivs() {
     
     streamers.appendChild(userDiv);
   });
-  indicators = document.querySelectorAll('.userDivIndicator');
+  indicators = [].slice.call(document.querySelectorAll('.userDivIndicator')); //for IE compatability
 
   streamMonitor();
 }
