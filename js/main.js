@@ -51,7 +51,7 @@ function streamMonitor() {
   streamInfoReq.responseType = 'json';
   streamInfoReq.addEventListener('load', function (e) {
     if (streamInfoReq.status === 200) {
-      if (typeof(streamInfoReq) === string) {
+      if (typeof(streamInfoReq) === 'string') {
         setUserInfo(JSON.parse(streamInfoReq.response.data));
       } else {
         setUserInfo(streamInfoReq.response.data);
