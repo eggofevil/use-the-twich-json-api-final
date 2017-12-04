@@ -1,0 +1,184 @@
+/* fonts */
+@font-face {
+    font-family: 'droid_serif';
+    src: url('../fonts/DroidSerif-Regular-webfont.eot') format('eot');
+    src: url('../fonts/DroidSerif-Regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'droid_sans';
+    src: url('../fonts/DroidSans-webfont.eot') format('eot');
+    src: url('../fonts/DroidSans-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'droid_sans';
+    src: url('../fonts/DroidSans-Bold-webfont.eot') format('eot');
+    src: url('../fonts/DroidSans-Bold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* main style */
+html {
+  font-family: droid_serif, serif;
+  color: #f7faff;
+  font-size: 20px;
+}
+body {
+  text-align: center;
+  background: #454e57;
+  margin: 0;
+}
+h1 {
+  font-size: 1.5em;
+  font-family: droid_sans, sans-serif;
+  text-shadow: 0.02em 0.02em 0.01em #FF4500,
+               -0.02em -0.02em 0.01em #FF4500;
+}
+h2 {
+  font-size: 1.2em;
+  font-family: droid_sans, sans-serif;
+}
+img {
+  height: 2em;
+  width: 2em;
+}
+.hidden {
+  display: none;
+}
+
+
+#streamers{
+  text-align: left;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+}
+.userDiv {
+  margin: auto;
+  margin-bottom: 0.6em;
+  width: 70%;
+  padding: 0.3em;
+  background: #d4d4d4;
+  border-left: 0.5em solid #FF4500;
+  border-bottom: 0.2em solid #FF4500;
+  border-bottom-left-radius: 1em;
+  border-top-right-radius: 1em;
+  color: #000000;
+  overflow: hidden;
+}
+.userDiv img {
+  height: 3em;
+  width: 3em;
+}
+.userDivName {
+  display: inline-block;
+  height: 3em;
+  line-height: 3em;
+  margin: 0;
+  padding: 0;
+  padding-left: 0.6em;
+  border:none;
+  border-radius: 0;
+  vertical-align: top;
+  font-size: 1em;
+  color: #000000;
+}
+.userDiv button {
+  display: inline-block;
+  height: 3em;
+  float: right;
+  padding: 0.3em;
+  font-size: 1em;
+  vertical-align: top;
+  background: #6b7879;
+  color: #ffffff;
+  border: none;
+  border-left: 0.5em solid #FF4500;
+  cursor: pointer;
+}
+.userDiv button:disabled {
+  display: none;
+}
+.userDiv button:hover,
+.userDiv button:focus {
+  background: #9da8a8;
+  color: #ffffff;
+  outline: none;
+  text-shadow: 0.02em 0.02em 0.01em #FF4500,
+               -0.01em -0.01em 0.01em #FF4500;
+}
+.userDivIndicator {
+  display: inline-block;
+  float: right;
+  height: 2em;
+  width: 2em;
+  margin-left: 1em;
+  padding: 0.2em;
+  padding-top: 0.1em;
+  font-size: 1em;
+  line-height: 1em;
+  text-align: center;
+  border-radius: 50%;
+}
+.userDivIndicator.offline {
+  background: #6b7879;
+  background: radial-gradient(circle at 2em center, #6b7879, #393f40);
+}
+.userDivIndicator.online {
+  background: #008000;
+  background: radial-gradient(circle at 2em center, #008000, #454e57);
+}
+.userDivSeparator {
+  clear: both;
+}
+.userDivStreamInfo {
+  margin: 0;
+  margin-right: 0.6em;
+  margin-left: 0.6em;
+  padding-bottom: 0.2em;
+}
+
+/* footer style */
+footer address{
+  font-size: 1em;
+  font-style: normal;
+}
+footer a {
+  color: #FF4500;
+}
+footer a:visited {
+  color: darkorange;
+}
+
+/* mobile corrections */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media (max-width: 936px) {
+  .userDivName {
+    padding-left: 0.3em;
+  }
+  .userDivIndicator {
+    display: block;
+    margin-bottom: 0.3em;
+  } 
+  .userDiv button {
+    display: block;
+    width: 100%;
+    clear: both;
+    border-top: 0.1em solid #FF4500
+  }
+}
+@media (max-width: 233px) {
+  html {
+    font-size: 10px;
+  }
+  .userDivName {
+    font-size: 1.2em;
+  }
+}
