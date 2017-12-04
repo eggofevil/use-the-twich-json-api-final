@@ -53,7 +53,7 @@ function streamMonitor() {
   streamInfoReq.addEventListener('load', function (e) {
     if (streamInfoReq.status === 200) {
       if (typeof(streamInfoReq) === 'string') {
-        setUserInfo(JSON.parse(streamInfoReq).response.data);
+        setUserInfo(JSON.parse(streamInfoReq.response).data);
       } else {
         setUserInfo(streamInfoReq.response.data);
       }
@@ -137,7 +137,7 @@ function getUserList() {
   userInfoReq.addEventListener('load', function (e) {
     if (userInfoReq.status === 200) {
       if (typeof (userInfoReq.response) === 'string') {
-        userList = JSON.parse(userInfoReq).response.data;
+        userList = JSON.parse(userInfoReq.response).data;
       } else {
         userList = userInfoReq.response.data;
       }
